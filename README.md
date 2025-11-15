@@ -1,3 +1,4 @@
+
 # 🧠 Pokémon Combat Winner Predictor
 
 A machine learning project that predicts the winner of a Pokémon battle using Pokédex statistics, battle history, and type advantages.
@@ -7,13 +8,13 @@ A machine learning project that predicts the winner of a Pokémon battle using P
 The goal of this project is to build a machine learning model that predicts which Pokémon will win in a one-on-one battle.
 The model uses:
 
-Pokémon stats
+ - Pokémon stats
 
-Pokémon types
+ - Pokémon types
 
-historical combat outcomes
+ - historical combat outcomes
 
-engineered features related to strengths, weaknesses, and stats differences
+ - engineered features related to strengths, weaknesses, and stats differences
 
 The notebook also includes extensive data exploration, cleaning, and type analysis.
 
@@ -29,50 +30,57 @@ The project relies on three CSV files:
 
 ## 🛠️ Methodology
 
-1. Data Exploration & Cleaning
+1. Data Exploration & Cleaning:
 
--   Identify Pokémon used/unseen in battles
+   -  Identify Pokémon used/unseen in battles
 
--   Analyze type distribution and frequencies
+   -  Analyze type distribution and frequencies
 
--   Detect duplicates and missing values
+   -  Detect duplicates and missing values:
 
--   Build helper structures (ID → type, list of unique types, etc.)
+   -  Build helper structures (ID → type, list of unique types, etc.)
 
 2. Feature Engineering
 
--   Extract Pokémon stats and types
+   -  Extract Pokémon stats and types
 
--   Encode categorical attributes
+   -  Encode categorical attributes
 
--   Create engineered combat features (stat differences, type advantage indicators, etc.)
+   -  Create engineered combat features (stat differences, type advantage indicators, etc.)
 
--   Prepare data for ML (normalization, shaping inputs)
+   -  Prepare data for ML (normalization, shaping inputs)
 
 3. Model Training
 
--   Train/test split
+   -  Train/test split
 
--   Supervised training using a classification model (e.g., RandomForest)
+   -  Supervised training using a classification model (e.g., RandomForest)
 
--   Adjust hyperparameters
+   -  Adjust hyperparameters
 
--   Evaluate with metrics such as accuracy and confusion matrix
+   -  Evaluate with metrics such as accuracy and confusion matrix
 
 4. Prediction
 
--   Apply the trained model to the tests.csv dataset
+   -  Apply the trained model to the tests.csv dataset
 
--   Generate predicted winners for each match
+   -  Generate predicted winners for each match
 
 ## 📊 Results
 
 The model is able to:
 
--   identify win-prone Pokémon
+ -  identify win-prone Pokémon
 
--   leverage stat differences and type influences
+ -  leverage stat differences and type influences
 
--   predict the outcomes of test battles with performance aligned with the dataset’s structure (imbalanced data, stat-heavy outcomes)
+ -  predict the outcomes of test battles with performance aligned with the dataset’s structure (imbalanced data, stat-heavy outcomes)
 
-
+## 📁 Repository Structure
+```
+├── Pokemon_Combat_Winner_Predictor.ipynb   # Main notebook
+├── pokemon.csv                             # Pokédex data
+├── combats.csv                             # Historical battles
+├── tests.csv                               # Battles to predict (still lost 😶‍🌫️)
+└── README.md                               # Documentation
+```
