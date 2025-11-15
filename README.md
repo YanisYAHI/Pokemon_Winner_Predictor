@@ -1,99 +1,78 @@
-# Pokémon Combat Winner Predictor
+# 🧠 Pokémon Combat Winner Predictor
 
-This project explores how to build a machine learning model capable of
-predicting the winner between two Pokémon based on their stats and
-characteristics.\
-It is implemented in a Jupyter Notebook
-(`Pokemon_Combat_Winner_Predictor.ipynb`) and includes data
-preprocessing, feature engineering, model training, evaluation, and
-result visualization.
+A machine learning project that predicts the winner of a Pokémon battle using Pokédex statistics, battle history, and type advantages.
 
-## Project Objectives
+## 🎯 Project Overview
 
--   Load and prepare Pokémon combat datasets\
--   Clean and preprocess data (missing values, normalization, encoding)\
--   Engineer meaningful features (stat differences, type advantages,
-    etc.)\
--   Train multiple classification models\
--   Compare their performance\
--   Predict the winner of a combat between two Pokémon\
--   Visualize key insights
+The goal of this project is to build a machine learning model that predicts which Pokémon will win in a one-on-one battle.
+The model uses:
 
-## Project Structure
+Pokémon stats
 
-    📁 project_folder/
-    │
-    ├── Pokemon_Combat_Winner_Predictor.ipynb   # Main notebook
-    ├── README.md                               # Project documentation
-    └── data/                                   # (Optional) Pokémon datasets
+Pokémon types
 
-## Machine Learning Models Used
+historical combat outcomes
 
-The notebook implements or compares several ML models, such as:
+engineered features related to strengths, weaknesses, and stats differences
 
--   Logistic Regression
--   Random Forest Classifier
--   Gradient Boosting
--   K-Nearest Neighbors
--   Support Vector Machine (SVM)
+The notebook also includes extensive data exploration, cleaning, and type analysis.
 
-Model performance is evaluated using:
+## 📦 Dataset
 
--   Accuracy\
--   F1-score\
--   Confusion matrix\
--   Cross-validation
+The project relies on three CSV files:
 
-## Technologies & Libraries
+ -  pokemon.csv — contains stats and characteristics of 800 Pokémon
 
--   Python 3.x\
--   Pandas\
--   NumPy\
--   Scikit-learn\
--   Matplotlib / Seaborn\
--   Jupyter Notebook
+ -  combats.csv — historical battle records (Pokémon 1, Pokémon 2, winner)
 
-## How to Run the Project
+ -  tests.csv — unlabeled battles used for final prediction **(lost the file sorry 😶‍🌫️, the syntax should be the same as combats.csv)** 
 
-1.  Clone the repository:
+## 🛠️ Methodology
 
-``` bash
-git clone https://github.com/<your-username>/<your-repo>.git
-```
+1. Data Exploration & Cleaning
 
-2.  Install the dependencies:
+-   Identify Pokémon used/unseen in battles
 
-``` bash
-pip install -r requirements.txt
-```
+-   Analyze type distribution and frequencies
 
-3.  Launch Jupyter Notebook:
+-   Detect duplicates and missing values
 
-``` bash
-jupyter notebook
-```
+-   Build helper structures (ID → type, list of unique types, etc.)
 
-4.  Open:
+2. Feature Engineering
 
-```{=html}
-<!-- -->
-```
-    Pokemon_Combat_Winner_Predictor.ipynb
+-   Extract Pokémon stats and types
 
-## Results Summary
+-   Encode categorical attributes
 
-Key deliverables of the notebook include:
+-   Create engineered combat features (stat differences, type advantage indicators, etc.)
 
--   Prediction of combat winners based on Pokémon stats\
--   Feature importance ranking\
--   Visual analysis\
--   Best-performing model
+-   Prepare data for ML (normalization, shaping inputs)
 
-## Conclusion
+3. Model Training
 
-This project demonstrates how machine learning can model competitive
-outcomes based on structured data.
+-   Train/test split
 
-## License
+-   Supervised training using a classification model (e.g., RandomForest)
 
-This project is licensed under the MIT License.
+-   Adjust hyperparameters
+
+-   Evaluate with metrics such as accuracy and confusion matrix
+
+4. Prediction
+
+-   Apply the trained model to the tests.csv dataset
+
+-   Generate predicted winners for each match
+
+## 📊 Results
+
+The model is able to:
+
+-   identify win-prone Pokémon
+
+-   leverage stat differences and type influences
+
+-   predict the outcomes of test battles with performance aligned with the dataset’s structure (imbalanced data, stat-heavy outcomes)
+
+
